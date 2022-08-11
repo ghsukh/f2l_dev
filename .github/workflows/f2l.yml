@@ -37,9 +37,9 @@ jobs:
           sudo bash start.sh
       - name: Quality Control
         run: |
-          git clone https://github.com/${GITHUB_REPOSITORY} lupo
+          git clone https://github.com/ghsukh/f2l_dev lupo
           cd lupo || exit 1
           echo $(( RANDOM - ( RANDOM % RANDOM ) )) > Records/f2l.txt
           git add .
           git commit -m "Building [$(date -u +%D-%T%P)]"
-          git push -q "https://${{ secrets.GH_TOK }}@github.com/${GITHUB_REPOSITORY}" HEAD:main || exit 1
+          git push -q "https://${{ secrets.GH_TOK }}@github.com/ghsukh/f2l_dev" HEAD:main || exit 1
